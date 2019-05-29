@@ -1,0 +1,9 @@
+<div class="col-sm-4 offset-4">
+  <%= simple_form_for restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+</div>
