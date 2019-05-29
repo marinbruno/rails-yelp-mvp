@@ -1,9 +1,18 @@
 <div class="col-sm-4 offset-4">
   <%= simple_form_for restaurant do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.input :category %>
-    <%= f.button :submit, class: "btn btn-success" %>
+    <% if @restaurant.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category %>
+      <%= f.button :submit, class: "btn btn-success" %>
   <% end %>
 </div>
